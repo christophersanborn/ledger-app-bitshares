@@ -21,6 +21,10 @@ On some platforms, an app bundle may be available for your platform's app menu o
   * Under MacOS, however, the Python version might be Python 2, which won't work.  Tutorials for how to install Python 3 are available on the web.  A recent one I found is here: https://wsvincent.com/install-python3-mac/
   * Installation instructions for various OS platforms, including Windows, are available here: https://realpython.com/installing-python/
 
+* On Linux systems, you may need to allow USB acccess to the Nano by modifying your system's "udev-rules."  More information may be found here:
+
+  * https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues
+
 ### Step-by-step:
 
 First, clone the `ledger-app-bitshares` repository:
