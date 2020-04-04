@@ -1,20 +1,17 @@
-#### SimpleGUIWallet
+### SimpleGUIWallet
 
-## A Minimalistic Wallet for Hardware-secured BitShares Accounts
+# A Minimalistic Wallet for Hardware-secured BitShares Accounts
 
-_SimpleGUIWallet_ is a minimalistic wallet interface for using the Ledger Nano S hardware wallet. It can sign transactions for BitShares accounts once it is configured with keys stored on a Ledger Nano device.  _SimpleGUIWallet_  is a "companion app" providing a graphical user interface (GUI) to the BitShares App running on the Ledger Nano device itself.
+_SimpleGUIWallet_ is a minimalistic wallet interface for using the Ledger Nano S hardware wallet on the BitShares network.  It's function is to communicate with the Nano device so that the device may sign transactions on behalf of BitShares accounts that have been authorized with keys stored on and managed by a Ledger Nano device.  It is a "companion app" that provides a graphical user interface (GUI) to the BitShares App running within the Ledger Nano device.
 
-This is a minimalistic wallet, intended to support primarily simple transfer operations.  Additionally, it provides a "Raw Transactions" facility, for technically-inclined users, who wish to sign arbitrary transactions, with their Nano.
+_SimpleGUIWallet_ is a minimalistic wallet, intended primarily to support simple transfer operations, although it does also provide a "Raw Transactions" facility for technically-inclined users who wish to sign arbitrary transactions with their device.
 
-### Installation:
+## Installation:
 
-_SimpleGUIWallet_ is a Python app that can be easily run via a Python interpreter in Windows, MacOS, Raspian, or Linux.
+_SimpleGUIWallet_ is a Python app that can be easily run via a Python interpreter in Windows, MacOS, or Linux, including Raspbian
+on the Raspberry Pi.
 
-**Note:** A OS platform specific "compiled app" may be available for users who just want a simple double-click icon.
-
-Check _**[Releases (ledger-app-bitshares)](https://github.com/bitshares/ledger-app-bitshares/releases)**_ to see if your platform is listed.
-
-If a precompiled app is not available, then the following instructions should get _SimpleGUIWallet_ up and running on your system.  The instructions assume a basic familiarity with the command line.
+On some platforms, an app bundle may be available for your platform's app menu or launcher system.  Check _**[Releases](https://github.com/bitshares/ledger-app-bitshares/releases)**_ to see if your platform is listed.  If not, then follow the instructions below to acquire and run _SimpleGUIWallet_ from a terminal or command line.
 
 ### Requirements:
 
