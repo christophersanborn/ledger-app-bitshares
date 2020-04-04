@@ -1,10 +1,10 @@
 ### SimpleGUIWallet
 
-# A Minimalistic Wallet for Hardware-secured BitShares Accounts
+# A Minimalist Wallet for Hardware-secured BitShares Accounts
 
-_SimpleGUIWallet_ is a minimalistic wallet interface for using the Ledger Nano S hardware wallet on the BitShares network.  It's function is to communicate with the Nano device so that the device may sign transactions on behalf of BitShares accounts that have been authorized with keys stored on and managed by a Ledger Nano device.  It is a "companion app" that provides a graphical user interface (GUI) to the BitShares App running within the Ledger Nano device.
+_SimpleGUIWallet_ is a minimalist wallet interface for using the Ledger Nano S hardware wallet on the BitShares network.  It's function is to communicate with the Nano device so that the device may sign transactions on behalf of BitShares accounts that have been authorized with keys stored on and managed by a Ledger Nano device.  It is a "companion app" that provides a graphical user interface (GUI) to the BitShares App running within the Ledger Nano device.
 
-_SimpleGUIWallet_ is a minimalistic wallet, intended primarily to support simple transfer operations, although it does also provide a "Raw Transactions" facility for technically-inclined users who wish to sign arbitrary transactions with their device.
+_SimpleGUIWallet_ is a minimalist wallet, intended primarily to support simple transfer operations, although it does also provide a "Raw Transactions" facility for technically-inclined users who wish to sign arbitrary transactions with their device.
 
 ## Installation:
 
