@@ -50,10 +50,13 @@ Start the wallet with:
 Note that _SimpleGUIWallet_ does not save any state between sessions.  It will not remember your account name or your account history or balances (the blockchain does this for you!).  Each time you start the wallet, you will need to enter your account name on the line "BitShares User Account", and click "Refresh Balances".  To automate this process, you can start the app with a command-line switch:
 
 ```
-$ ./start-wallet.sh --user your-account-here
+./start-wallet.sh --user your-account-here
 ```
 
-Or, you can edit the `start-wallet.sh` script and add the `--user your-account-name` to the last line that reads: `python3 SimpleGUIWallet.py "$@"`.
+Or, you can edit the `start-wallet.sh` script and add the `--user your-account-name` to the last line that reads:
+```
+python3 SimpleGUIWallet.py "$@"
+```
 
 ### Account Balances and History:
 
@@ -79,17 +82,17 @@ The activity panel at the bottom of the window will give feedback as to the prog
 
 ### Account Keys:
 
-The purpose of _SimpleGUIWallet_ is to store your account's private keys only on the Ledger Nano;  _SimpleGUIWallet_ does NOT store or generate keys.  However, it will let you browse the public keys stored on your Nano, and select which one will be used to sign transactions.  These are identified by their "SLIP-48 path".  There is a hyperlink in the "Public Keys" tab to learn more about SLIP-48.
+The purpose of _SimpleGUIWallet_ is to store your account's private keys only on the Ledger Nano;  _SimpleGUIWallet_ does NOT store or generate keys.  However, it will let you browse the public keys stored on your Nano, and select which one will be used to sign transactions.  These are identified by their "SLIP-48 path".  SLIP-48 is described in detail [here](https://github.com/satoshilabs/slips/blob/master/slip-0048.md), and is similiar in concept to Bitcoin's BIP-44.
 
 To browse public keys, go to the "Public Keys" tab.  Three lists appear covering the three "account roles" that define BitShares authorities.  The lists initialize by displaying only the derivation paths.  If you wish to see the actual keys, connect your Nano and click "Query Addresses".  This will retrieve each key from the device.  Selecting one from the list boxes will print the key in the PubKey box at the top of the window.  Here, you can copy-and-paste it elsewhere (e.g. when assigning those keys as authorities on the account).
 
-Note: You do not need to retrieve keys from the Nano on a routine basis.  All you need to do is specify which path to use, and the Nano will sign with the corresponding key.  The default path is the correct one for typical usage.  You only need to retrieve keys when first setting up an account to be controlled by the Nano.
+Note: You do not need to retrieve keys from the Nano on a routine basis.  All you need to do is specify which path to use, and the Nano will sign with the corresponding key.  The default path is generally the correct one for typical usage.  You only need to retrieve keys when first setting up an account to be controlled by the Nano.
 
 _A tutorial for how to set up a BitShares account to be controlled by your Ledger Nano can be found here:_
 
 * **[Securing BitShares with Ledger Nano (how.bitshares.works)](https://how.bitshares.works/en/master/user_guide/ledger_nano.html)**
 
-**Important:** before copying a key from your Nano device to access to your BitShares Account, be sure to click the "Confirm Address" button.  Doing so will allow you to view the key on your Nano's screen to ensure that the key on the device matches the key as reported by _SimpleGUIWallet_.
+**Important:** before copying a key from your Nano device to assign to your BitShares Account, be sure to click the "Confirm Address" button on the Public Keys tab. Doing so will allow you to view the key on your Nano's screen to ensure that the key on the device matches the key as reported by _SimpleGUIWallet_.
 
 ### Advanced Operations:
 
