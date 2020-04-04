@@ -19,7 +19,7 @@ On some platforms, an app bundle may be available for your platform's app menu o
 
   * Under most Linux distributions, Python 3 is likely available by default, although on older systems you may need to update to get version 3.6 or greater.
   * Under MacOS, however, the Python version might be Python 2, which won't work.  Tutorials for how to install Python 3 are available on the web.  A recent one I found is here: https://wsvincent.com/install-python3-mac/
-  * Installation instructions for various OS platforms, including Windows, are avaialble here: https://realpython.com/installing-python/
+  * Installation instructions for various OS platforms, including Windows, are available here: https://realpython.com/installing-python/
 
 ### Step-by-step:
 
@@ -82,7 +82,7 @@ The activity panel at the bottom of the window will give feedback as to the prog
 
 ### Account Keys:
 
-The purpose of _SimpleGUIWallet_ is to store your account's private keys only on the Ledger Nano;  _SimpleGUIWallet_ does NOT store or generate keys.  However, it will let you browse the public keys stored on your Nano, and select which one will be used to sign transactions.  These are identified by their "SLIP-48 path".  SLIP-48 is described in detail [here](https://github.com/satoshilabs/slips/blob/master/slip-0048.md), and is similiar in concept to Bitcoin's BIP-44.
+The purpose of _SimpleGUIWallet_ is to store your account's private keys only on the Ledger Nano;  _SimpleGUIWallet_ does NOT store or generate keys.  However, it will let you browse the public keys stored on your Nano, and select which one will be used to sign transactions.  These are identified by their "SLIP-48 path".  SLIP-48 is described in detail [here](https://github.com/satoshilabs/slips/blob/master/slip-0048.md), and is similar in concept to Bitcoin's BIP-44.
 
 To browse public keys, go to the "Public Keys" tab.  Three lists appear covering the three "account roles" that define BitShares authorities.  The lists initialize by displaying only the derivation paths.  If you wish to see the actual keys, connect your Nano and click "Query Addresses".  This will retrieve each key from the device.  Selecting one from the list boxes will print the key in the PubKey box at the top of the window.  Here, you can copy-and-paste it elsewhere (e.g. when assigning those keys as authorities on the account).
 
@@ -96,4 +96,4 @@ _A tutorial for how to set up a BitShares account to be controlled by your Ledge
 
 ### Advanced Operations:
 
-If you know how to construct the JSON represention of BitShares transactions, you can use the "Raw Transactions" tab to send any arbitrary transaction to the Nano for signing and broadcasting.  This tab isn't necessarily easy to use, but it makes almost any BitShares transaction "possible".
+If you know how to construct the JSON representation of BitShares transactions, you can use the "Raw Transactions" tab to send any arbitrary transaction to the Nano for signing and broadcasting.  This tab isn't necessarily easy to use, but it makes almost any BitShares transaction "possible".
