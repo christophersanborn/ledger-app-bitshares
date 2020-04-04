@@ -39,7 +39,7 @@ cd ledger-app-bitshares/SimpleGUIWallet/
 
 _SimpleGUIWallet_ depends on several packages, from the PyPI repository, as listed in `requirements.txt`.  These dependencies enable the GUI widgets, Nano communication, and interaction with the BitShares network.  These dependencies will be installed automatically if you start the wallet with the `start-wallet.sh` script.
 
-### Usage:
+## Usage:
 
 Start the wallet with:
 
