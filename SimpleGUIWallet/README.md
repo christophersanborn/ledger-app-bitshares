@@ -15,9 +15,9 @@ On some platforms, an app bundle may be available for your platform's app menu o
 
 ### Requirements:
 
-* A Python 3.6+ interpreter
+* A Python3 interpreter, version 3.6 or greater
 
-  * Under most Linux distributions, Python 3 is likely available by default.
+  * Under most Linux distributions, Python 3 is likely available by default, although on older systems you may need to update to get version 3.6 or greater.
   * Under MacOS, however, the Python version might be Python 2, which won't work.  Tutorials for how to install Python 3 are available on the web.  A recent one I found is here: https://wsvincent.com/install-python3-mac/
   * Installation instructions for various OS platforms, including Windows, are avaialble here: https://realpython.com/installing-python/
 
@@ -26,32 +26,38 @@ On some platforms, an app bundle may be available for your platform's app menu o
 First, clone the `ledger-app-bitshares` repository:
 
 ```
-$ git clone https://github.com/bitshares/ledger-app-bitshares.git
+git clone https://github.com/bitshares/ledger-app-bitshares.git
 ```
 
 The _SimpleGUIWallet_ companion app is in a subfolder:
 
 ```
-$ cd ledger-app-bitshares/SimpleGUIWallet/
+cd ledger-app-bitshares/SimpleGUIWallet/
 ```
 
 ### Dependencies:
 
-_SimpleGUIWallet_ depends on several packages, from the PyPI repository, as listed in `requirements.txt`.  These dependencies enable the GUI widgets, Nano communication, and interaction with the BitShares network.  These dependencies will be installed automatically on your first usage of the bash script below via "apt-get" and "pip3" installs.
+_SimpleGUIWallet_ depends on several packages, from the PyPI repository, as listed in `requirements.txt`.  These dependencies enable the GUI widgets, Nano communication, and interaction with the BitShares network.  These dependencies will be installed automatically if you start the wallet with the `start-wallet.sh` script.
 
 ### Usage:
+
+Start the wallet with:
 
 ```
 ./start-wallet.sh
 ```
 
-### Enter Account Name:
+Note that _SimpleGUIWallet_ does not save any state between sessions.  It will not remember your account name or your account history or balances (the blockchain does this for you!).  Each time you start the wallet, you will need to enter your account name on the line "BitShares User Account", and click "Refresh Balances".  To automate this process, you can start the app with a command-line switch:
 
-At the top of the of the UI you must enter your BitShares Account Name.
+```
+$ ./start-wallet.sh --user your-account-here
+```
+
+Or, you can edit the `start-wallet.sh` script and add the `--user your-account-name` to the last line that reads: `python3 SimpleGUIWallet.py "$@"`.
 
 ### Account Balances and History:
 
-The Assets and History tabs on the left side of the window list your account's balances and account's recent history respectively.  The app does not auto-update balances; to refresh them, use the "Refresh Balances" button.
+The Assets and History tabs on the left side of the window list your account's balances and recent history respectively.  The app does not auto-update balances; to refresh them, use the "Refresh Balances" button.
 
 ### Simple Transfers:
 
@@ -65,11 +71,11 @@ For convenience, the UI allows you to click on an asset in the "Assets" tab to a
 
 Next, plug in your Nano device, log into the Nano device with your Pin Code, and start the BitShares app.
 
-To finalize the transaction click "Send Transfer".  SimpleGUIWallet sends the transaction JSON to the Nano for you to view the details.  You will be prompted to confirm the transaction on your Nano device.   After you confirm, the Nano signs the transaction and sends the signed transaction back to SimpleGUIWallet to broadcast to the network over a public api node.
+To finalize the transaction click "Send Transfer".  _SimpleGUIWallet_ sends the transaction to the Nano device whereupon you will be able to view the details on the Nano screen.  You will be prompted to confirm the transaction on your Nano device.   After you confirm, the Nano signs the transaction and sends the signature back to _SimpleGUIWallet_, which will then broadcast it to the network over a public API node.
 
 The activity panel at the bottom of the window will give feedback as to the progress and success of each step.
 
-Note: Not all asset_names are recognized by the Nano firmware.  This is because disk space is limited and external call from the Nano device are not possible.   When SimpleGUIWallet seeks confirmation on an unrecognized asset_name, the Nano device will display the asset_id and "graphene integer amount", without the decimal place marked.  Pull requests for additional asset name translations will be considered on a case by case basis.
+**Note:** Not all asset ID codes are recognized by the Nano firmware, due to app data storage restrictions, and the inability of the device to query the BitShares network.  Many popular tokens will be recognized and displayed to the user by name, but some tokens will only be displayable by their asset ID code, which may look strange to the user.  When SimpleGUIWallet seeks confirmation on an unrecognized asset_name, the Nano device will display the asset_id and "graphene integer amount", without the decimal place marked.  It is up to the user to verify that the asset ID's displayed on the Nano screen correspond to the token the user is intending to send.
 
 ### Account Keys:
 
